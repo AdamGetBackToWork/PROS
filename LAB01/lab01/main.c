@@ -14,7 +14,7 @@ int main() {
     }
 
     // Main game loop - continues until 'count_check' reaches 81 - meaning the entire board is covered with "+"
-    while (count_check != 10) {
+    while (count_check != 81) {
         count_check = 0;
 
         // Display the game board, as a 9x9 table with border
