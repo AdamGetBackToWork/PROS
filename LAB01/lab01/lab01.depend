@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1698045304 source:c:\users\adams\desktop\weiti\sem 3\pros\lab01\lab01\main.c
+	<stdio.h>
+	<windows.h>
+
