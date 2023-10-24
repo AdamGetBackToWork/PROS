@@ -2,7 +2,7 @@
 #include <windows.h>
 
 int main() {
-    int move_count = 0, col_num, row_num, limit = 0, count_check = 0;
+    int move_count = 0, col_num, row_num, count_check = 0;
     char buffer[256];
 
     // Initialize a 9x9 table with '0' values
