@@ -1,13 +1,11 @@
-# Adam Szajgin, done by myself
-# ----- PROS - LAB04 - Python lab01 -----
-
-# This code contains a plenty of hardcodes, of which im aware of, yet its not the point of this task to make it as universal as possible, but to showcase
+# This code contains a plenty of hardcodes, of which im aware, yet its not the point of this task to make it as universal as possible, but to showcase
 # different function operations.
 
 # Both Task 1 and Task 2 are done within this code, yet are a bit mixed up together to enhance the usability of the programme.
 
 # Making the terminal UI a bit prettier and intuitive
-# The user chooses the operation and the numbers/strings they want to perform the operation on
+# The user chooses the operation and the numbers/strings
+# they want to perform the operation on
 
 print("------------------------------------")
 print("---- OPERATION 1:       ADDITION ---")
@@ -26,6 +24,7 @@ j = 0
 
 # function for addition, it accepts any kind of input, but is being tested on intigers and strings
 def addition(a, b):
+    """This function adds up two input arguments, either a string or an integer!"""
     global j
     j += 1
     addition_result = a + b
@@ -34,28 +33,45 @@ def addition(a, b):
 
 # function for multiplication, it accepts any kind of input, but is being tested on intigers and strings
 def multiplication(a, b):
+    """This function multiplies up two input arguments, either a string or an integer!
+    In case of integers, simply multiplies them, in case of string, it multiplies it by
+    the number later provided by the user"""
     multiplication_result = a * b
     print("The multiplication equals to: {}".format(multiplication_result))
 
 
 # function for comparison, it accepts any kind of input, but is being tested on intigers and strings
 def comparing(a, b):
-    if a < b:
-        print("The {} is smaller than {}".format(a, b))
+    """ "This function compares which is greater (or bigger) of two input arguments,
+    either a string or an integer!"""
+
+    if isinstance(a, str) and isinstance(b, str):
+        if len(a) < len(b):
+            print("The length of {} is smaller than {}".format(a, b))
+        else:
+            print("The length of {} is bigger or equal to {}".format(a, b))
     else:
-        print("The {} is bigger or equal to {}".format(a, b))
+        if a < b:
+            print("The {} is smaller than {}".format(a, b))
+        elif a == b:
+            print("The {} is equal to {}".format(a, b))
+        else:
+            print("The {} is bigger than {}".format(a, b))
 
 
-# function for altering a list, the user firstly chooses which of the two lists they want to alter, then chooses what they want to change to,
+# function for altering a list, the user firstly chooses which of the two
+# lists they want to alter, then chooses what they want to change to,
 # and where in the list they want to make this change!
 # It prints the default chosen list and then the altered version
-def alter_list(some_list, index, new_value):
+def alter_list(some_list: list, index, new_value):
+    """This function lets the user alter the chosen predefined list, user
+    chooses desired list, index of change and what to change to"""
     print(some_list)
     some_list[index] = new_value
     print(some_list)
 
 
-# Typical for structural programming, switch case structure, wanted to add this to the program so it is easier to use :)
+# Typical for structural programming, switch case structure, wanted to add this to the programme so its easier to use :)
 match op_choice:
     # First case, adding up the input, testing for intiger and then a string
     case 1:
@@ -105,6 +121,9 @@ match op_choice:
             b = str(input("Give me the thing you want to change to: "))
             a = int(input("Give me the index of your change: "))
 
+            # Calling the alter_list function with, lists[list_choice] - from dictionary
+            # "lists", choosing the one fitting list_choice,
+            # altering with input a and b provided by the user.
             alter_list(lists[list_choice], a, b)
         else:
             print("Invalid list choice.")
