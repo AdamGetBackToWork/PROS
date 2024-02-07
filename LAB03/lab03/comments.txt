@@ -1,3 +1,0 @@
-game date: 2023-11-25 16:10:50
-table size: 3 
-move count: 5 
